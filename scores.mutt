@@ -1,0 +1,20 @@
+## Scoring File for Mutt
+
+# Add one point for GPG-signed mails
+score "~g" 1
+
+
+# Plussed Work Things
+
+score "~f dmuse@jupitermedia.com" 3
+score "~f anewman@jupitermedia.com" 1
+score "~f carla@bratgrrl.com" 2
+score "~f charlie@schluting.com" 2
+score "~f paul@rubens.org" 2
+
+
+# Minused Work Things
+score "~t pitch@jupitermedia.com" -2
+score "~t stats@jupitermedia.com" -2
+
+

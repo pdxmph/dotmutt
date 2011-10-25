@@ -1,0 +1,37 @@
+# Mutt scoring file
+
+unscore * # start fresh
+score ~A 2 # Everyone gets two points
+score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
+score "~s press.*release" -50 # unless it's a press release
+#score "~s Website.*Stat" +10 # I want to notice stats mails
+score "~C jwfeednet@jupitermedia.com" +8 # I also want to notice feedback
+
+# People-based scores
+
+# Super people
+score ~foterhog@gmail.com 20
+score ~fkitchel 20
+score ~fAlisonDun@co.clackamas.or.us 20
+
+# Specific work people I should notice
+score ~fdmuse@jupitermedia.com 9
+score ~fcarla@bratgrrl.com 6
+score ~fpaul@rubens.org 6
+score ~fcharlie@schluting.com 6
+#score ~fkjaros@jupitermedia.com 6
+score ~fryan@bass.name 6
+
+# People-based Penalties
+score ~fjamiller@jupitermedia.com -10
+
+
+
+
+# Date-based scoring penalties -- older things fall down
+score ~d>3d -1
+score ~d>7d -3
+score ~d>14d -6
+
+# under here:  appended scores from mutt scripts
+score ~fjohn.mignault@gmail.com +20
