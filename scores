@@ -1,13 +1,15 @@
 # Mutt scoring file
 
 unscore * # start fresh
-# score ~A 2 # Everyone gets two points
-# score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
+score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
 
 # People-based scores
 
 # bump Al
 score ~foterhog@gmail.com +20
+
+# bump TriMet alerts
+score "~f trimet ~s Service\\ Alert" +10
 
 # sent to my teams
 score ~Cdocs@puppetlabs.com +5
@@ -17,4 +19,4 @@ score ~Cplatform@puppetlabs.com +5
 score ~d>3d -1
 score ~d>7d -3
 score ~d>14d -6
-
+score "~O" 10

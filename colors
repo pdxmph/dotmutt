@@ -1,42 +1,20 @@
-# -*- muttrc -*-
-# Mutt color configuration
-## colorize mail headers
+# colors
+color normal	white black
+color attachment brightyellow black
+color hdrdefault cyan black
+color indicator white blue
+color markers	brightred black
+color quoted	green black
+color signature cyan black
+color status black brightyellow
+color tilde	blue black
+color tree	red black
 
-## possible color values:
-# white, black, green, magenta, blue, cyan, yellow, red, default, colorx
-# can prepend "bright" e.g brightmagenta
+color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
 
-
-#color index red white "~s PuddingTime.*New.Comment.Posted"
-#color index cyan default "~C mhall@jupitermedia.com"
-color index blue default "! ~C ."
-color index blue default ~T
-color index blue default "~n 10-20"
-color index black default "~n 21-100"
-color index red default "~y todo"
-color index magenta default "~y reply"
-color index green default "~U"
-
-color index brightblack default "~n 6-9"
-color index magenta default "~tpitch@jupitermedia.com"
-
-# Body Stuff
-color body green default "^gpg:"
-color body cyan	default "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
-color body brightgreen  default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-color hdrdefault brightblack default # default header lines
-color signature  brightblack default # signature
-#color attachment brightyellow default # MIME attachments
-#color header cyan default "X-label:"
-color header brightblack default "From:"
-color header brightblack default "Subject:"
-#color header default default "X-Spam-Status:"
-color status white blue  # status line
-color tree brightblack default # tree
-
-# people colors
-color index brightred   default "~F"
-
-# status colors 
-color index white red "~d>5d" 
-
+color index brightyellow default "~n 6-9"
+color index white red "~f trimet ~s Service\\ Alert"
+color index brightblack default "~f postmaster\.twitter\.com"
+color index cyan default "!~p"
+color index brightblack default "~n 0-1"
+color index red default "~n >7"

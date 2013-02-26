@@ -1,9 +1,12 @@
 # Start off with a given profile
 source ~/.mutt/personal.profile
 
+#color status black brightyellow
+
 # Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
+source ~/.mutt/colors
 
 # Source account hooks with authorization data 
 # we put some hooks with our credentials in here for each account.  They need to look like this:
@@ -36,11 +39,11 @@ set smart_wrap
 
 # Fix up the headers we see
 ignore x-mailer
-hdr_order to cc date from subject 
+hdr_order to: cc: date: from: subject: 
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
-set index_format = "[%Z]  %D  %-20.20F  %s"
+set index_format = "[%2N] [%Z]  %D  %-20.20F  %s"
 set sort = threads                         # like gmail
 set sort_aux = reverse-last-date-received  # like gmail
 set uncollapse_jump                        # don't collapse on an unread message
