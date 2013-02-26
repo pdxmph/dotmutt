@@ -1,102 +1,17 @@
-# -*- muttrc -*-
-# mutt macros file
+# <c>hange to <p>ersonal
+macro index .cp '<change-folder>imaps://pdxmph@imap.gmail.com<enter><enter-command>source ~/.mutt/personal.profile<enter>'
 
-# reload configuration
+# <c>hange to <w>ork
+macro index .cw '<change-folder>imaps://michael.hall@puppetlabs.com@imap.gmail.com<enter><enter-command>source ~/.mutt/puppet.profile<enter>'
+
+# see all the urls in a message
+# which is becoming more and more god-awful
+macro index,pager .u |/usr/local/bin/urlview
+
+# .r reloads our configuration
 macro index,browser .r "<enter-command>source ~/.muttrc<enter>"
 
-# Change Identities
-macro index,pager,browser .p ":source ~/.mutt/profile.personal\n"
-macro index,pager,browser .w ":source ~/.mutt/profile.smt\n"
-
-# attachments 
-macro attach s <save-entry><bol>/Users/mph/Desktop/<eol>
-
-# experimental
-macro index .! |~/bin/muttscorer.pl\n  # assign someone to the high scorers
-macro pager .! |~/bin/muttscorer.pl\n # assign someone to the high scorers
-
-# URLs
-macro index .u |/usr/local/bin/urlview\n
-macro pager .u |/usr/local/bin/urlview\n
-
-
-
-# disabled below here
-
-#file in work, personal or receipts
-# macro index \`w "<save-message>+.Work.`date +%Y`.`date +%B`<return><sync-mailbox>" "file in work folder"
-# macro pager \`w "<save-message>+.Work.`date +%Y`.`date +%B`<return><sync-mailbox>" "file in work folder"
-# macro index \`p "<save-message>+.Personal.`date +%Y`.`date +%B`<return><sync-mailbox>" "file in personal folder"
-# macro pager \`p "<save-message>+.Personal.`date +%Y`.`date +%B`<return><sync-mailbox>" "file in personal folder"
-# macro index \`r "<save-message>+.receipts<return><sync-mailbox><next-undeleted>" "save in receipts"
-# macro pager \`r "<save-message>+.receipts<return><sync-mailbox><next-undeleted>" "save in receipts"
-# macro index \`t "<save-message>+.todo<return><sync-mailbox><next-undeleted>" "save as a todo"
-# macro pager \`t "<save-message>+.todo<return><sync-mailbox><next-undeleted>" "save as a todo"
-#macro pager \`s "<save-message>+[Gmail]/Spam<return>" "Move to spam learning mailbox"
-#macro index \`s "<save-message>+[Gmail]/Spam<return>" "Move to spam learning mailbox"
-# macro pager \`h "<copy-message>+.learn_ham<return><sync-mailbox>" "Copy to ham learning mailbox"
-# macro index \`h "<copy-message>+.learn_ham<return><sync-mailbox>" "Copy to ham learning mailbox"
-
-
-
-#macro pager \`s "|formail|~/sausr/bin/sa-learn --spam > /dev/null 2>&1 &\nd <sync-mailbox>" "learn spam on dinero"
-#macro index \`s "|formail|~/sausr/bin/sa-learn --spam > /dev/null 2>&1 &\nd <sync-mailbox>" "learn spam on dinero"
-
-#macro pager \`h "<save-message>=spam.marked-ham<return><copy-message>!<return>"
-#macro index \`h "<save-message>=spam.marked-ham<return><copy-message>!<return>"
-#macro index \`s "<save-message>=spam.marked-spam<return>"
-#macro pager \`s "<save-message>=spam.marked-spam<return>"
-
-# #file tagged messages in work, personal, receipts
-# macro index .tr ";s^a^k=receipts<return>"
-# macro pager .tr ";s^a^k=receipts<return>"
-# macro index .tp ";s^a^k=Personal.`date +%Y`.`date +%B`<return>"
-# macro pager .tp ";s^a^k=Personal.`date +%Y`.`date +%B`<return>"
-# macro index .tw ";s^a^k=Work.`date +%Y`.`date +%B`<return>"
-# macro pager .tw ";s^a^k=Work.`date +%Y`.`date +%B`<return>"
-
-# # imitate the old search-body function
-# macro index \eb '/~b ' 'search in message bodies'
-# macro browser \ca ':set mask="^"<enter>mar*<enter>' 'list the archives'
-# macro browser \cw ':set mask="^"<enter>min\-work\-*<enter>'
-# macro browser \cl ':set mask="^"<enter>min\-l\-*<enter>'
-# macro browser \cu ':set mask=".*"<enter><tab>'
-#  
-# macro index \p\l ':source ~/.mutt/defaults.lt'
-#  
-# #my macros
-# macro index .da "D .*\n" # mark all for deletion
-# macro index .sh "l ^a^k~n>10\n" #really high interest
-# macro index .sa "l ^a^k.*\n" # show all
-# macro index .dt "^D" # delete thread 
-# macro index .C "<esc>V" # collapse all threads
-# macro index .c "<esc>v" # collapse current thread
-# macro index .si "l ~n5-100\n"
-# macro index .sp "l ^a^k~t mph@puddingbowl.org\n" # Show personal mail only
-# macro index .sw "l ^a^k~t .*@jupitermedia.com\n" # Show work mail only
-# macro index .sn "l ^a^k~N\n" # Show unread/new only
-# macro index .sb "l ^a^k~t pitch@jupitermedia.com\n" # Show pitch mail only
-# 
-# macro index N "l ~N!~D" # show me new, undeleted only
-# 
-# # Show documentation when pressing F1
-# macro generic <f1> "!less /usr/doc/mutt/manual.txt\n" "Show M1utt documentation"
-# macro index   <f1> "!less /usr/doc/mutt/manual.txt\n" "Show Mutt documentation"
-# macro pager   <f1> "!less /usr/doc/mutt/manual.txt\n" "Show Mutt documentation"
-# 
-# # reload config
-# macro index,pager,browser .r "<enter-command>source ~/.muttrc<enter>"
-# #macro browser .r "<enter-command>source ~/.muttrc<enter>"
-# 
-# 
-# #set my_default_editor=$editor
-# 
-# bind editor <space> noop
-# 
-# macro index,pager y "<save-message>=[Gmail]/All Mail<enter>" "Archive"
-# macro index,pager \# "<save-message>=[Gmail]/Trash<enter>" "Trash"
-# macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
-# macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
-# macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
-# macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
-# macro index go "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to sent Mail"
+macro index .sn "l ^a^k~N\n" # Show unread/new only
+macro index .sa "l ^a^k.*\n" # show all
+macro index .C "<esc>V" # toggle threads
+macro index .si "l ~n5-100\n" # show interesting 

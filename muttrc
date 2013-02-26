@@ -1,111 +1,53 @@
-# muttrc
-# this goes in ~/.muttrc
+# Start off with a given profile
+source ~/.mutt/personal.profile
 
-
-set mbox_type=Maildir
-set folder=$HOME/Mail
-set move=no
-
-set allow_ansi=yes
-
-# Print to a remote printer
-set print=yes
-set print_split=yes
-set use_from=yes
-set envelope_from=yes
-#set implicit_autoview
-set delete=yes
-auto_view text/html
-
-alternates  "mph@puddingbowl.org|michael@socialmediatoday.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org"
-
-set header_cache="~/.mutt/cache/headers"/
-set message_cachedir="~/.mutt/cache/bodies"
-
-set pager_index_lines 
-
-set folder_format = "%2C%2N    %d      %f"
-set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
-set sort = 'threads'
-set sort_aux = 'last-date-received'
-set sort_browser= 'last-date'  # how to sort files in the dir browser
-set include = yes
-set markers=no
-set mail_check= 15
-set timeout= 5
-set imap_keepalive = 300
-set wait_key = no
-
-# in what order do we view message alternates?
-alternative_order text/plain text/html
-set certificate_file=~/.mutt/certificates
-
-# use lbdb, which has hooks into the OS X address book
-set query_command="/usr/local/bin/lbdbq '%s'"
-set wrapmargin=20
-
-
-
-# make for human-looking names in list based on aliasess
-set reverse_alias = yes
-
-bind index    \eS tag-subthread 
-
-set mailcap_path = "~/.mailcap"
-
-
-# Decide which headers to look at in a message:
-ignore *
-unignore from: date subject to cc bcc
-unignore organization organisation x-mailing-list
-unignore posted-to: 
-unignore X-Spam-Status:
-unignore X-Label:
-
-hdr_order From Subject Date To Cc
-
-## Set what appears after the '@' in case of hostname breakage
-set hostname="puddingbowl.org"
-
-## editor for composing mail
-#set editor ="jed %s -tmp -f mail_mode"
-#set editor = "emacsclient %s"
-#set editor = "~/bin/aquamacs-edit.sh"
-#set editor ="emacsclient --alternate-editor=/opt/local/bin/jed"
-#set editor="mate -w"
-#set editor="jed %s" # " -l ~/.mutt/jed.mutt.sl"
-
-## Don't move things to All Mail automatically
-set move = no
-
-## don't confirm when moving a message to another mailbox
-set confirmappend = no
-
-##pgp stuff
-
-set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
-set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
-set pgp_decrypt_command="gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
-set pgp_sign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
-set pgp_clearsign_command="gpg --no-verbose --batch --output ---passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
-set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0x6DB22A24 -- -r %r -- %f"
-set pgp_encrypt_sign_command="pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xC9C40C31 -- -r %r -- %f"
-set pgp_import_command="gpg --no-verbose --import -v %f"
-set pgp_export_command="gpg --no-verbose --export --armor %r"
-set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"
-set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r" 
-set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r" 
-set pgp_autosign=no
-set pgp_sign_as=0x6DB22A24
-set pgp_replyencrypt=yes
-set pgp_timeout=1800
-set pgp_good_sign="^gpg: Good signature from"
-
-
-source ~/.mutt/aliases
-source ~/.mutt/hooks
-source ~/.mutt/colors.ubuntu
-#source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+# Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
-source ~/.mutt/profile.personal
+
+# Source account hooks with authorization data 
+# we put some hooks with our credentials in here for each account.  They need to look like this:
+# account-hook imaps://USER@SERVER 'set imap_user=USER imap_pass=PASSWORD smtp_pass=PASSWORD'
+source ~/.mutt/auth.hooks
+
+# Caching and such
+set message_cachedir='~/.mutt/cache/bodies'
+set header_cache = "~/.mutt/cache/headers"
+set certificate_file='~/.mutt/certificates'
+
+# Misc stuff I ate off the sidewalk that has not made me sick so far
+set allow_ansi=yes
+set use_from=yes
+set envelope_from=yes
+set implicit_autoview
+set delete=yes
+
+# Who is me?
+alternates  "mph@puddingbowl.org|michael.hall@puppetlabs.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org"
+
+# Pretty colors
+source ~/.mutt/ubuntu.colors
+
+# Make stuff show the way we want when viewing a message
+alternative_order text/plain
+auto_view text/html
+set markers=no
+set smart_wrap
+
+# Fix up the headers we see
+ignore x-mailer
+hdr_order to cc date from subject 
+
+# Index View Options ---------------------------------
+set date_format = "%m/%d"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads                         # like gmail
+set sort_aux = reverse-last-date-received  # like gmail
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Some editing options
+set edit_headers = no
+set autoedit
+set editor = "/usr/bin/vim -c':set spell'"
