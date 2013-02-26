@@ -14,4 +14,5 @@ macro index,browser .r "<enter-command>source ~/.muttrc<enter>"
 macro index .sn "l ^a^k~N\n" # Show unread/new only
 macro index .sa "l ^a^k.*\n" # show all
 macro index .C "<esc>V" # toggle threads
-macro index .si "l ~n5-100\n" # show interesting 
+macro index .si "l (~n5-100|~N)\n" # show interesting 
+macro index .rs "<enter-command>source ~/.mutt/scores<enter>" # reprocess scores

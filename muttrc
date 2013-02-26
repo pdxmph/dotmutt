@@ -28,9 +28,6 @@ set delete=yes
 # Who is me?
 alternates  "mph@puddingbowl.org|michael.hall@puppetlabs.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org"
 
-# Pretty colors
-source ~/.mutt/ubuntu.colors
-
 # Make stuff show the way we want when viewing a message
 alternative_order text/plain
 auto_view text/html
