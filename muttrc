@@ -6,7 +6,7 @@
 # source ~/.mutt/auth.hooks
 
 source "gpg2 -d ~/.mutt/auth.hooks.gpg |"
-
+#source ~/.mutt/sidebar
 # Start off with a given profile
 source ~/.mutt/personal.profile
 

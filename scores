@@ -18,7 +18,8 @@ score ~Cplatform@puppetlabs.com +5
 # Date-based scoring penalties -- older things fall down
 score ~d>3d -1
 score ~d>7d -3
-score ~d>14d -6
+score ~d>14d -10
 
 score "~O" +10 # old = +10 so I don't miss it
 score "~F" +20 # flagged = +20 so it stays in the interesting view for a while, even if old
+score "!~p ~d>7d" -10
