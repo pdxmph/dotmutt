@@ -27,7 +27,7 @@ set wait_key=no
 set allow_ansi=yes
 set use_from=yes
 set envelope_from=yes
-set implicit_autoview
+#set implicit_autoview
 set delete=yes
 
 # Who is me?
