@@ -20,6 +20,9 @@ set message_cachedir='~/.mutt/cache/bodies'
 set header_cache = "~/.mutt/cache/headers"
 set certificate_file='~/.mutt/certificates'
 
+# I don't want to be prompted to press keys after piping messages
+set wait_key=no
+
 # Misc stuff I ate off the sidewalk that has not made me sick so far
 set allow_ansi=yes
 set use_from=yes

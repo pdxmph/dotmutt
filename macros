@@ -17,3 +17,5 @@ macro index .C "<esc>V" # toggle threads
 macro index .si "l (~n5-100|~N)\n" # show interesting 
 macro index .rs "<enter-command>source ~/.mutt/scores<enter>" # reprocess scores
 macro index .sf "l ~F\n" # show flagged
+macro index .hl "l ^a^k!~l\n" # hide lists
+macro index,pager,browser .of "<pipe-message>~/.mutt/mutt2omnifocus.rb<enter>" # send message to omnifocus
