@@ -16,3 +16,4 @@ macro index .sa "l ^a^kall\n" # show all
 macro index .C "<esc>V" # toggle threads
 macro index .si "l (~n5-100|~N)\n" # show interesting 
 macro index .rs "<enter-command>source ~/.mutt/scores<enter>" # reprocess scores
+macro index .sf "l ~F\n" # show flagged
