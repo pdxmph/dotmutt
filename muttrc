@@ -1,3 +1,7 @@
+# bring in our secured account hooks
+
+source "gpg2 -d ~/.mutt/auth.hooks.gpg |"
+
 # Start off with a given profile
 source ~/.mutt/personal.profile
 
@@ -11,7 +15,7 @@ source ~/.mutt/colors
 # Source account hooks with authorization data 
 # we put some hooks with our credentials in here for each account.  They need to look like this:
 # account-hook imaps://USER@SERVER 'set imap_user=USER imap_pass=PASSWORD smtp_pass=PASSWORD'
-source ~/.mutt/auth.hooks
+#source ~/.mutt/auth.hooks
 
 # Caching and such
 set message_cachedir='~/.mutt/cache/bodies'
