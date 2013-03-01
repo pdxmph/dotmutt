@@ -15,5 +15,6 @@ color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
 color index brightyellow default "~n 6-9"
 color index white red "~f trimet ~s Service\\ Alert"
 color index brightblack default "~f postmaster\.twitter\.com"
+color index brightblack default "~s shared\\ a\\ post\\ on\\ Google"
 color index brightblack default "~n 0-1 !~p"
 color index red default "~n >9"

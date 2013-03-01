@@ -22,5 +22,6 @@ score ~d>14d -10
 
 score "~O" +10 # old = +10 so I don't miss it
 score "~F" +20 # flagged = +20 so it stays in the interesting view for a while, even if old
-score "!~p ~d>7d" -10
-score "!~l" +2
+score "!~p ~d>7d" -10 # not for me directly, getting old, let it fade away
+score "!~l" +2 # to a known list, give it a bump
+score "~s shared\\ a\\ post\\ on\\ Google" -10 # ought to just turn these off
