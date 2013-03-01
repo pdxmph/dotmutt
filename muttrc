@@ -56,3 +56,8 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set edit_headers = no
 set autoedit
 set editor = "/usr/bin/vim -c':set spell'"
+
+# Address book stuff
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
