@@ -7,8 +7,11 @@
 
 source "gpg2 -d ~/.mutt/auth.hooks.gpg |"
 #source ~/.mutt/sidebar
-# Start off with a given profile
-source ~/.mutt/personal.profile
+
+# Start off with a given profile: Uncomment this to start with a specific 
+# profile, or set an alias to pick your preferred profile at startup, e.g.
+# alias mutt = "mutt -e 'source ~/.mutt/profile.puppet'
+#source ~/.mutt/personal.profile
 
 # Source our macros, scores
 source ~/.mutt/macros
