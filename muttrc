@@ -6,7 +6,6 @@
 # source ~/.mutt/auth.hooks
 
 source "gpg2 -d ~/.mutt/auth.hooks.gpg |"
-#source ~/.mutt/sidebar
 
 # Start off with a given profile: Uncomment this to start with a specific 
 # profile, or set an alias to pick your preferred profile at startup, e.g.
@@ -16,7 +15,10 @@ source "gpg2 -d ~/.mutt/auth.hooks.gpg |"
 # Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
-source ~/.mutt/colors
+#source ~/.mutt/colors
+#source ~/.mutt/solarized-256.colors
+#source ~/.mutt/solarized-16.colors
+source ~/.mutt/zenburn.colors
 
 # Caching and such
 set message_cachedir='~/.mutt/cache/bodies'
@@ -27,18 +29,22 @@ set certificate_file='~/.mutt/certificates'
 set wait_key=no
 
 # Misc stuff I ate off the sidewalk that has not made me sick so far
-set allow_ansi=yes
+#set allow_ansi=yes
 set use_from=yes
 set envelope_from=yes
-#set implicit_autoview
 set delete=yes
 
 # Who is me?
 alternates  "mph@puddingbowl.org|michael.hall@puppetlabs.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org"
 
 # Make stuff show the way we want when viewing a message
+
+# Show plaintext message parts in preference of html ones
 alternative_order text/plain
+
+# but show html rendered with our mailcap entry when we select that part for viewing
 auto_view text/html
+
 set markers=no
 set smart_wrap
 
@@ -58,7 +64,15 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 # Some editing options
 set edit_headers = no
 set autoedit
-set editor = "/usr/bin/vim -c':set spell'"
+set text_flowed=yes
+
+# False prophets!
+#set editor = "/usr/bin/vim -c':set spell'"
+#set editor="vim \"+set nonumber\" \"+set spell\" \"+set filetype=mail\" +/^$/"
+
+# There is only one editor 
+set editor = "emacsclient -nw -t"
+
 
 # Address book stuff
 set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
