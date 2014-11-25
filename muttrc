@@ -5,20 +5,20 @@
 # If you choose not to encrypt it, then maybe:
 # source ~/.mutt/auth.hooks
 
-source "gpg2 -d ~/.mutt/auth.hooks.gpg |"
+source ~/.mutt/auth.hooks
+
+# Make Google SMTP work with Yosemite
+set smtp_authenticators = 'gssapi:login'
 
 # Start off with a given profile: Uncomment this to start with a specific 
 # profile, or set an alias to pick your preferred profile at startup, e.g.
 # alias mutt = "mutt -e 'source ~/.mutt/profile.puppet'
-#source ~/.mutt/personal.profile
+source ~/.mutt/personal.profile
 
 # Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
-#source ~/.mutt/colors
-#source ~/.mutt/solarized-256.colors
-#source ~/.mutt/solarized-16.colors
-source ~/.mutt/zenburn.colors
+source ~/.mutt/colors
 
 # Caching and such
 set message_cachedir='~/.mutt/cache/bodies'
@@ -35,9 +35,9 @@ set envelope_from=yes
 set delete=yes
 
 # Who is me?
-alternates  "mph@puddingbowl.org|mike.hall@puppetlabs.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org"
+alternates  "mph@puddingbowl.org|mike.hall@puppetlabs.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org|michael.hall@puppetlabs.com"
 
-# Make stuff show the way we want when viewing a message
+# Make stuff show the way we want when viewing a message ...
 
 # Show plaintext message parts in preference of html ones
 alternative_order text/plain
@@ -61,20 +61,28 @@ set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
+
+# Customize reply attribution
+
+set attribution = "On %{%A, %B %e, %Y}, %n <%a> wrote:\n"
+
 # Some editing options
 set edit_headers = no
 set autoedit
-set text_flowed=yes
+#set text_flowed=yes
 
 # False prophets!
 #set editor = "/usr/bin/vim -c':set spell'"
 #set editor="vim \"+set nonumber\" \"+set spell\" \"+set filetype=mail\" +/^$/"
 
 # There is only one editor 
-set editor = "emacsclient -nw -t"
-
+set editor = "/usr/local/bin/emacsclient  -t"
 
 # Address book stuff
-set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+# set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+
+# we'll use goobook, since it has all my contacts.
+# pip install goobook, then configure the netrc per https://pypi.python.org/pypi/goobook/1.6
+set query_command="/usr/local/bin/goobook query '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete

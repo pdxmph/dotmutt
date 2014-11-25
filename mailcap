@@ -1,9 +1,11 @@
 application/octet-stream ; echo %s "can be anything..."                    ; copiousoutput
-#text/html                ; /usr/local/bin/elinks -dump %s ; nametemplate=%s.html ; copiousoutput
+text/html                ; /usr/local/bin/elinks -dump %s ; nametemplate=%s.html ; copiousoutput
 
 # QuickLook in OSX
 image/*                  ; /usr/bin/qlmanage -p 2>/dev/null %s             ; copiousoutput
 audio/*                  ; /usr/bin/qlmanage -p 2>/dev/null %s             ; copiousoutput
 video/*                  ; /usr/bin/qlmanage -p 2>/dev/null %s             ; copiousoutput
 application/*            ; /usr/bin/qlmanage -p 2>/dev/null %s             ; copiousoutput
-text/html                ; /usr/bin/qlmanage -p 2>/dev/null %s ;nametemplate=%s.html ; copiousoutput
+
+# This would open quicklook and render the HTML of the message, but it seems to be hanging in Yosemite
+#text/html                ; /usr/bin/qlmanage -p 2>/dev/null %s ;nametemplate=%s.html ; copiousoutput
