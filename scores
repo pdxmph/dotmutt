@@ -4,16 +4,16 @@ unscore * # start fresh
 score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
 
 # People-based scores
-
-# bump Al
 score ~foterhog@gmail.com +20
+score ~fbrian.stein@puppetlabs.com +10
 
 # bump TriMet alerts
 score "~f trimet ~s Service\\ Alert" +10
 
 # sent to my teams
-score ~Cdocs@puppetlabs.com +5
-score ~Cplatform@puppetlabs.com +5
+score ~Ctechpubs-dept@puppetlabs.com +10
+score ~Cpnt@puppetlabs.com +10
+score ~Ceng-staff@puppetlabs.com +10
 
 # Date-based scoring penalties -- older things fall down
 score ~d>3d -1
@@ -24,4 +24,8 @@ score "~O" +10 # old = +10 so I don't miss it
 score "~F" +20 # flagged = +20 so it stays in the interesting view for a while, even if old
 score "!~p ~d>7d" -10 # not for me directly, getting old, let it fade away
 score "!~l" +2 # to a known list, give it a bump
-score "~s shared\\ a\\ post\\ on\\ Google" -10 # ought to just turn these off
+
+
+# Short Shelf-Lives
+score "~d>1d ~f trimet ~sService\\ Alert" -50
+score "~d>1d ~f Unroll.me ~sDaily\\ Rollup" -50
