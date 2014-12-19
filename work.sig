@@ -1,3 +1,3 @@
 Mike Hall 
-Technical Writing & Toolsmithing at Puppet Labs
-mph@puppetlabs.com
+Technical Publications Manager at Puppet Labs
+c: 503.333.0109
