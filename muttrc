@@ -5,20 +5,20 @@
 # If you choose not to encrypt it, then maybe:
 # source ~/.mutt/auth.hooks
 
-source "gpg2 -d ~/.mutt/auth.hooks.gpg |"
+source ~/.mutt/auth.hooks
 
 # Start off with a given profile: Uncomment this to start with a specific 
 # profile, or set an alias to pick your preferred profile at startup, e.g.
 # alias mutt = "mutt -e 'source ~/.mutt/profile.puppet'
-#source ~/.mutt/personal.profile
+source ~/.mutt/puppet.profile
 
 # Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
-#source ~/.mutt/colors
+source ~/.mutt/colors
 #source ~/.mutt/solarized-256.colors
 #source ~/.mutt/solarized-16.colors
-source ~/.mutt/zenburn.colors
+#source ~/.mutt/zenburn.colors
 
 # Caching and such
 set message_cachedir='~/.mutt/cache/bodies'
@@ -71,7 +71,8 @@ set text_flowed=yes
 #set editor="vim \"+set nonumber\" \"+set spell\" \"+set filetype=mail\" +/^$/"
 
 # There is only one editor 
-set editor = "emacsclient -nw -t"
+#set editor = "emacsclient -nw -t"
+set editor="jed %s -tmp --mailedit-mode"
 
 
 # Address book stuff
