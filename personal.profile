@@ -2,9 +2,10 @@
 # Mutt sender profile : personal/default
 
 unset folder
-set folder = "imaps://pdxmph@imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed="+[Gmail]/Drafts"
+set folder = ~/.mail/personal
+set spoolfile = +INBOX
+mailboxes +INBOX +flagged +sent +To\ Ben
+
 set hostname="puddingbowl.org"
 set signature= "~/.mutt/personal.sig"
 set from=mph@puddingbowl.org
@@ -25,11 +26,8 @@ my_hdr Return-Path: <mph@puddingbowl.org>
 unmailboxes *
 
 # load up mailboxes appropriate to this profile
-set spoolfile=+"INBOX"
-mailboxes + "=INBOX"
-mailboxes + "=[Gmail].All Mail"
-mailboxes + "=[Gmail].Drafts"
-mailboxes + "=[Gmail].Sent Mail"
-mailboxes + "=[Gmail].Spam"
-mailboxes + "=[Gmail].Starred"
-mailboxes + "=[Gmail].Trash"
+# set spoolfile=+"INBOX"
+
+# Syncing macros 
+macro index O "<shell-escape>offlineimap -a personal -q -uquiet<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -a personal -qf INBOX -uquiet<enter>" "run offlineimap to sync inbox"

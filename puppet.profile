@@ -2,9 +2,12 @@
 # Mutt sender profile : puppet
 
 unset folder
-set folder = "imaps://mike.hall\@puppetlabs.com@imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed="+[Gmail]/Drafts"
+unmailboxes *
+set folder = ~/.mail/puppet
+set spoolfile = +INBOX
+mailboxes +INBOX +flagged +sent 
+set postponed = +drafts
+
 set hostname="puppetlabs.com"
 set signature= "~/.mutt/work.sig"
 set from=mike.hall@puppetlabs.com
@@ -21,16 +24,6 @@ my_hdr Organization: Puppet Labs
 my_hdr Sender: Michael Hall <mike.hall@puppetlabs.com>
 my_hdr Return-Path: <mike.hall@puppetlabs.com>
 
-# unload all my mailboxes
-unmailboxes *
-
-# set my mailboxes appropriate to this profile
-set spoolfile=+"INBOX"
-mailboxes + "=INBOX"
-mailboxes + "=[Gmail].All Mail"
-mailboxes + "=[Gmail].Drafts"
-mailboxes + "=[Gmail].Sent Mail"
-mailboxes + "=[Gmail].Spam"
-mailboxes + "=[Gmail].Starred"
-mailboxes + "=[Gmail].Trash"
-mailboxes + "=Puppet Users"
+# Syncing macros 
+macro index O "<shell-escape>offlineimap -a puppet -q -uquiet<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>offlineimap -a puppet -qf INBOX -uquiet<enter>" "run offlineimap to sync inbox"
