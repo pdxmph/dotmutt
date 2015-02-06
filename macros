@@ -11,6 +11,7 @@ macro index,pager .u |/usr/local/bin/urlview
 # .r reloads our configuration
 macro index,browser .r "<enter-command>source ~/.muttrc<enter>"
 
+macro index .so "l ^a^k~O\n" # Show old only 
 macro index .sn "l ^a^k~N\n" # Show unread/new only
 macro index .sa "l ^a^kall\n" # show all
 macro index .C "<esc>V" # toggle threads
@@ -20,5 +21,5 @@ macro index .sf "l ~F\n" # show flagged
 macro index .hl "l ^a^k!~l\n" # hide lists
 #macro index,pager,browser .of "<pipe-message>~/.mutt/mutt2omnifocus.rb<enter>" # send message to omnifocus
 macro index .to "T ~d>7d\n" # "tag old" -- messages older than 7 days
-
+macro attach W "<save-entry><bol>~/Dropbox/mutt/<eol>" "Save to Dropbox mutt directory"
 # Sync email

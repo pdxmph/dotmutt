@@ -52,7 +52,7 @@ set smart_wrap
 
 # Fix up the headers we see
 ignore *
-unignore list-unsubscribe date: from subject To
+unignore list-unsubscribe date: from subject To cc
 hdr_order To List-Unsubscribe Date: From Subject 
 
 # Index View Options ---------------------------------
@@ -78,13 +78,13 @@ set autoedit
 #set editor="vim \"+set nonumber\" \"+set spell\" \"+set filetype=mail\" +/^$/"
 
 # There is only one editor 
-set editor = "/usr/local/bin/emacsclient  -t"
+set editor = "emacsclient  -t"
 
 # Address book stuff
 # set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
 
 # we'll use goobook, since it has all my contacts.
 # pip install goobook, then configure the netrc per https://pypi.python.org/pypi/goobook/1.6
-set query_command="/usr/local/bin/goobook query '%s'"
-bind editor <Tab> complete-query
-bind editor ^T    complete
+#set query_command="/usr/local/bin/goobook query '%s'"
+#bind editor <Tab> complete-query
+#bind editor ^T    complete

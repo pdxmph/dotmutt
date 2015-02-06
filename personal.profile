@@ -10,7 +10,7 @@ set hostname="puddingbowl.org"
 set signature= "~/.mutt/personal.sig"
 set from=mph@puddingbowl.org
 set realname = "Mike Hall"
-set smtp_url = "smtp://pdxmph@smtp.gmail.com:587/"
+#set smtp_url = "smtp://pdxmph@smtp.gmail.com:587/"
 
 # set the status to show which profile I'm using
 set status_format= "-%r-Personal: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---\n"
