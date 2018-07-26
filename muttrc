@@ -35,7 +35,7 @@ set envelope_from=yes
 set delete=yes
 
 # Who is me?
-alternates  "mph@puddingbowl.org|mike.hall@puppetlabs.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org|michael.hall@puppetlabs.com"
+alternates  "mph@puddingbowl.org|mike.hall@puppet.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org|michael.hall@puppetlabs.com"
 
 # Make stuff show the way we want when viewing a message ...
 
