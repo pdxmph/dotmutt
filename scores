@@ -1,3 +1,4 @@
+# -*- mode: muttrc -*-
 # Mutt scoring file
 
 unscore * # start fresh

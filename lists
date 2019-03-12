@@ -1,9 +1,9 @@
 unlists *
-subscribe tech@puppetlabs.com portland@puppetlabs.com
-subscribe employees@puppetlabs.com product@puppetlabs.com
-subscribe all@puppetlabs.com
-subscribe team-nigel@puppetlabs.com
-lists -progress@puppetlabs.com
-lists -status@puppetlabs.com
-lists product@puppetlabs.com
+subscribe tech@puppet.com portland@puppet.com
+subscribe employees@puppet.com product@puppet.com
+subscribe all@puppet.com
+subscribe team-nigel@puppet.com
+lists -progress@puppet.com
+lists -status@puppet.com
+lists product@puppet.com
 lists puppet-docs@noreply.github.com

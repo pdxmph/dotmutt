@@ -30,6 +30,7 @@ set wait_key=no
 
 # Misc stuff I ate off the sidewalk that has not made me sick so far
 #set allow_ansi=yes
+set text_flowed=yes
 set use_from=yes
 set envelope_from=yes
 set delete=yes
@@ -76,7 +77,8 @@ set autoedit
 #set editor="vim \"+set nonumber\" \"+set spell\" \"+set filetype=mail\" +/^$/"
 
 # There is only one editor 
-set editor = "/usr/local/bin/emacsclient  -t"
+set editor = "/usr/local/bin/emacsclient  -t -nw"
+
 
 # Address book stuff
 # set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"

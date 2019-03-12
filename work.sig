@@ -1,3 +1,3 @@
 Mike Hall 
-Technical Publications Manager at Puppet Labs
+Senior Director of Business Operations
 c: 503.333.0109
