@@ -13,12 +13,13 @@ set smtp_authenticators = 'gssapi:login'
 # Start off with a given profile: Uncomment this to start with a specific 
 # profile, or set an alias to pick your preferred profile at startup, e.g.
 # alias mutt = "mutt -e 'source ~/.mutt/profile.puppet'
-source ~/.mutt/puppet.profile
+#source ~/.mutt/puppet.profile
+source ~/.mutt/personal.profile
 
 # Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
-source ~/.mutt/colors
+source ~/.mutt/dracula.mutt
 
 # Caching and such
 set message_cachedir='~/.mutt/cache/bodies'
@@ -34,6 +35,7 @@ set text_flowed=yes
 set use_from=yes
 set envelope_from=yes
 set delete=yes
+set wrap=80
 
 # Who is me?
 alternates  "mph@puddingbowl.org|mike.hall@puppet.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org|michael.hall@puppetlabs.com"
