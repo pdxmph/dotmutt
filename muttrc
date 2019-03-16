@@ -16,10 +16,16 @@ set smtp_authenticators = 'gssapi:login'
 source ~/.mutt/puppet.profile
 #source ~/.mutt/personal.profile
 
+
+
 # Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
 source ~/.mutt/dracula.mutt
+
+# aliases
+set alias_file=~/.mutt/aliases
+source ~/.mutt/aliases
 
 # Caching and such
 set message_cachedir='~/.mutt/cache/bodies'
@@ -85,8 +91,10 @@ set editor = "/usr/local/bin/emacsclient  -t -nw"
 # Address book stuff
 # set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
 
+set query_command = "lbdbq %s 2>/dev/null"
+
 # we'll use goobook, since it has all my contacts.
 # pip install goobook, then configure the netrc per https://pypi.python.org/pypi/goobook/1.6
-set query_command="/usr/local/bin/goobook query '%s'"
+#set query_command="/usr/local/bin/goobook query '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
