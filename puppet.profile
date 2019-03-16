@@ -5,9 +5,9 @@ unset folder
 set folder = "imaps://mike.hall\@puppet.com@imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed="+[Gmail]/Drafts"
-set hostname="puppetlabs.com"
+set hostname="puppet.com"
 set signature= "~/.mutt/work.sig"
-set from=mike.hall@puppetlabs.com
+set from="mike.hall@puppet.com"
 set realname = "Mike Hall"
 set smtp_url = "smtp://mike.hall@puppet.com@smtp.gmail.com:587/"
 
@@ -33,4 +33,4 @@ mailboxes + "=[Gmail].Sent Mail"
 mailboxes + "=[Gmail].Spam"
 mailboxes + "=[Gmail].Starred"
 mailboxes + "=[Gmail].Trash"
-mailboxes + "=Puppet Users"
+#mailboxes + "=Puppet Users"

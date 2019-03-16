@@ -13,8 +13,8 @@ set smtp_authenticators = 'gssapi:login'
 # Start off with a given profile: Uncomment this to start with a specific 
 # profile, or set an alias to pick your preferred profile at startup, e.g.
 # alias mutt = "mutt -e 'source ~/.mutt/profile.puppet'
-#source ~/.mutt/puppet.profile
-source ~/.mutt/personal.profile
+source ~/.mutt/puppet.profile
+#source ~/.mutt/personal.profile
 
 # Source our macros, scores
 source ~/.mutt/macros
