@@ -8,4 +8,4 @@ video/*                  ; /usr/bin/qlmanage -p 2>/dev/null %s             ; cop
 application/*            ; /usr/bin/qlmanage -p 2>/dev/null %s             ; copiousoutput
 
 # This would open quicklook and render the HTML of the message, but it seems to be hanging in Yosemite
-#text/html                ; /usr/bin/qlmanage -p 2>/dev/null %s ;nametemplate=%s.html ; copiousoutput
+text/html                ; /usr/bin/qlmanage -p 2>/dev/null %s ;nametemplate=%s.html ; copiousoutput
