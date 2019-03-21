@@ -2,9 +2,22 @@
 # Mutt sender profile : personal/default
 
 unset folder
-set folder = "imaps://pdxmph@imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed="+[Gmail]/Drafts"
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+set delete
+unset confirmappend
+set quit
+unset mark_old
+set pipe_decode
+set thorough_search
+
+
+set folder = "~/.mail"
+set spoolfile = "+personal/INBOX"
+set postponed="+personal/drafts"
+
 set hostname="puddingbowl.org"
 set signature= "~/.mutt/personal.sig"
 set from=mph@puddingbowl.org
@@ -33,3 +46,20 @@ mailboxes + "=[Gmail].Sent Mail"
 mailboxes + "=[Gmail].Spam"
 mailboxes + "=[Gmail].Starred"
 mailboxes + "=[Gmail].Trash"
+
+
+# set my mailboxes appropriate to this profile
+set spoolfile="+personal/INBOX"
+mailboxes + "+personal/INBOX"
+mailboxes + "+personal/[Gmail].All Mail"
+mailboxes + "+personal/[Gmail].Drafts"
+mailboxes + "+personal/[Gmail].Sent Mail"
+mailboxes + "+personal/[Gmail].Spam"
+mailboxes + "+personal/[Gmail].Starred"
+mailboxes + "+personal/[Gmail].Trash"
+set mbox      = "+personal/archive"
+set postponed = "+personal/drafts"
+
+
+set folder_format="%2C %N %8s %d %f"
+
