@@ -2,9 +2,21 @@
 # Mutt sender profile : puppet
 
 unset folder
-set folder = "imaps://mike.hall\@puppet.com@imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed="+[Gmail]/Drafts"
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+set delete
+unset confirmappend
+set quit
+unset mark_old
+set pipe_decode
+set thorough_search
+
+
+set folder = "~/.mail"
+set spoolfile = "+puppet.com/INBOX"
+set postponed="+puppet.com/drafts"
 set hostname="puppet.com"
 set signature= "~/.mutt/work.sig"
 set from="mike.hall@puppet.com"
@@ -25,12 +37,17 @@ my_hdr Return-Path: <mike.hall@puppet.com>
 unmailboxes *
 
 # set my mailboxes appropriate to this profile
-set spoolfile=+"INBOX"
-mailboxes + "=INBOX"
-mailboxes + "=[Gmail].All Mail"
-mailboxes + "=[Gmail].Drafts"
-mailboxes + "=[Gmail].Sent Mail"
-mailboxes + "=[Gmail].Spam"
-mailboxes + "=[Gmail].Starred"
-mailboxes + "=[Gmail].Trash"
-#mailboxes + "=Puppet Users"
+set spoolfile="+puppet.com/INBOX"
+mailboxes + "+puppet.com/INBOX"
+mailboxes + "+puppet.com/[Gmail].All Mail"
+mailboxes + "+puppet.com/[Gmail].Drafts"
+mailboxes + "+puppet.com/[Gmail].Sent Mail"
+mailboxes + "+puppet.com/[Gmail].Spam"
+mailboxes + "+puppet.com/[Gmail].Starred"
+mailboxes + "+puppet.com/[Gmail].Trash"
+set mbox      = "+puppet.com/archive"
+set postponed = "+puppet.com/drafts"
+
+
+set folder_format="%2C %N %8s %d %f"
+
