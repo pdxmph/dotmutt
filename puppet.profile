@@ -22,6 +22,9 @@ set signature= "~/.mutt/work.sig"
 set from="mike.hall@puppet.com"
 set realname = "Mike Hall"
 set smtp_url = "smtp://mike.hall@puppet.com@smtp.gmail.com:587/"
+set smtp_pass= `~/.mutt/ruby_get_password.rb mike.hall@puppet.com smtp.gmail.com`
+
+
 
 # set the status to show which profile I'm using
 set status_format= "-%r-Puppet: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---\n"
