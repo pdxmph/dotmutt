@@ -6,11 +6,15 @@ socktimeout = 90
 fsync = False
 pythonfile=~/.mutt/offlineimap.py
 
+
+
 [Account Gmail-Puppet]
 localrepository = Gmaillocal-Puppet
 remoterepository = Gmailserver-Puppet
 synclabels = yes
 labelsheader = X-Keywords
+postsynchook = notmuch new
+
 
 [Repository Gmailserver-Puppet]
 #This is the remote repository
@@ -29,6 +33,8 @@ localrepository = Gmaillocal-Personal
 remoterepository = Gmailserver-Personal
 synclabels = yes
 labelsheader = X-Keywords
+postsynchook = notmuch new
+
 
 [Repository Gmailserver-Personal]
 #This is the remote repository
