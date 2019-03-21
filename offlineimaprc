@@ -1,0 +1,43 @@
+[general]
+accounts = Gmail-Puppet, Gmail-Personal
+maxsyncaccounts = 4
+ui = ttyui
+socktimeout = 90
+fsync = False
+pythonfile=~/.mutt/offlineimap.py
+
+[Account Gmail-Puppet]
+localrepository = Gmaillocal-Puppet
+remoterepository = Gmailserver-Puppet
+synclabels = yes
+labelsheader = X-Keywords
+
+[Repository Gmailserver-Puppet]
+#This is the remote repository
+type = Gmail
+remoteuser = mike.hall@puppet.com
+remotepasseval = get_keychain_pass(account="mike.hall@puppet.com", server="imap.gmail.com")
+sslcacertfile =  /usr/local/etc/openssl/cert.pem
+
+[Repository Gmaillocal-Puppet]
+#This is the 'local' repository
+type = GmailMaildir
+localfolders = ~/.mail/puppet.com
+
+[Account Gmail-Personal]
+localrepository = Gmaillocal-Personal
+remoterepository = Gmailserver-Personal
+synclabels = yes
+labelsheader = X-Keywords
+
+[Repository Gmailserver-Personal]
+#This is the remote repository
+type = Gmail
+remotepasseval = get_keychain_pass(account="pdxmph@gmail.com", server="imap.gmail.com")
+remoteuser = pdxmph@gmail.com
+sslcacertfile =  /usr/local/etc/openssl/cert.pem
+
+[Repository Gmaillocal-Personal]
+#This is the 'local' repository
+type = GmailMaildir
+localfolders = ~/.mail/personal
