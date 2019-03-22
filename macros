@@ -29,7 +29,13 @@ macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 # search with notmuch
 macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+
+# nudge scores on senders
+set score_threshold_delete=0
+
+macro index,pager .s10 "<pipe-entry>~/.mutt/scoremail.rb +10<enter>" # score sender +10
+macro index,pager .s20 "<pipe-entry>~/.mutt/scoremail.rb +10<enter>" # score sender +20
+macro index,pager .sk "<pipe-entry>~/.mutt/scoremail.rb -20<enter>" # score sender -20

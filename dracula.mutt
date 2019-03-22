@@ -17,7 +17,7 @@ color tree		color141	default
 
 # message index ------ foreground ---- background -----------------------------
 color index		color210	default 	~D # deleted messages
-color index		color84		default 	~F # flagged messages
+color index		yellow		default 	~F # flagged messages
 color index		color117	default 	~N # new messages
 color index		color212	default 	~Q # messages which have been replied to
 color index		color215	default 	~T # tagged messages
@@ -40,3 +40,5 @@ color quoted2		color84		default
 color quoted3		color215	default
 color quoted4		color212	default
 color signature		color212	default
+
+color index color84 default "~n >9"

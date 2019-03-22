@@ -65,3 +65,4 @@ set postponed = "+personal/drafts"
 
 set folder_format="%2C %N %8s %d %f"
 
+macro index o "<shell-escape>offlineimap -a GmailPersonal -qf INBOX<enter>" "run offlineimap to sync inbox"

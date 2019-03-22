@@ -15,7 +15,6 @@ set thorough_search
 
 
 set folder = "~/.mail"
-set spoolfile = "+puppet.com/INBOX"
 set postponed="+puppet.com/drafts"
 set hostname="puppet.com"
 set signature= "~/.mutt/work.sig"
@@ -31,9 +30,9 @@ set status_format= "-%r-Puppet: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? 
 
 unmy_hdr *
 
-my_hdr From: Michael Hall <mike.hall@puppet.com>
+my_hdr From: Mike Hall <mike.hall@puppet.com>
 my_hdr Organization: Puppet
-my_hdr Sender: Michael Hall <mike.hall@puppet.com>
+my_hdr Sender: Mike Hall <mike.hall@puppet.com>
 my_hdr Return-Path: <mike.hall@puppet.com>
 
 # unload all my mailboxes
@@ -54,3 +53,5 @@ set postponed = "+puppet.com/drafts"
 
 set folder_format="%2C %N %8s %d %f"
 
+# Quick check in the current account's inbox
+macro index o "<shell-escape>offlineimap -a GmailPuppet -qf INBOX<enter>" "run offlineimap to sync inbox"
