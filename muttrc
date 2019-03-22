@@ -13,10 +13,8 @@ set smtp_authenticators = 'gssapi:login'
 # Start off with a given profile: Uncomment this to start with a specific 
 # profile, or set an alias to pick your preferred profile at startup, e.g.
 # alias mutt = "mutt -e 'source ~/.mutt/profile.puppet'
-source ~/.mutt/puppet.profile
-#source ~/.mutt/personal.profile
-
-
+#source ~/.mutt/puppet.profile
+source ~/.mutt/personal.profile
 
 # Source our macros, scores
 source ~/.mutt/macros
@@ -36,7 +34,7 @@ set certificate_file='~/.mutt/certificates'
 set wait_key=no
 
 # Misc stuff I ate off the sidewalk that has not made me sick so far
-#set allow_ansi=yes
+set allow_ansi=yes
 set text_flowed=yes
 set use_from=yes
 set envelope_from=yes
@@ -47,12 +45,6 @@ set wrap=80
 alternates  "mph@puddingbowl.org|mike.hall@puppet.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org|michael.hall@puppetlabs.com"
 
 # Make stuff show the way we want when viewing a message ...
-
-# Show plaintext message parts in preference of html ones
-alternative_order text/plain
-
-# but show html rendered with our mailcap entry when we select that part for viewing
-auto_view text/html
 
 set markers=no
 set smart_wrap
@@ -78,18 +70,9 @@ set attribution = "On %{%A, %B %e, %Y}, %n <%a> wrote:\n"
 # Some editing options
 set edit_headers = no
 set autoedit
-#set text_flowed=yes
-
-# False prophets!
-#set editor = "/usr/bin/vim -c':set spell'"
-#set editor="vim \"+set nonumber\" \"+set spell\" \"+set filetype=mail\" +/^$/"
 
 # There is only one editor 
 set editor = "/usr/local/bin/emacsclient  -t -nw"
-
-
-# Address book stuff
-# set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
 
 set query_command = "lbdbq %s 2>/dev/null"
 
@@ -98,3 +81,35 @@ set query_command = "lbdbq %s 2>/dev/null"
 #set query_command="/usr/local/bin/goobook query '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
+
+# Pager View Options ---------------------------------
+set pager_index_lines = 10 # number of index lines to show
+set pager_context = 3      # number of context lines to show
+set pager_stop             # don't go to next message automatically
+set menu_scroll            # scroll in menus
+unset markers              # no ugly plus signs
+
+alternative_order text/plain text/enriched text/html
+
+bind index gg       first-entry
+bind index G        last-entry
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Sidebar Patch --------------------------------------
+#set sidebar_delim   = '  │'
+set sidebar_visible = no
+set sidebar_width   = 30
+color sidebar_new color221 color233
+# Status Bar -----------------------------------------
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+# Sidebar Navigation ---------------------------------
+bind index,pager <right>  sidebar-open
+bind index,pager B sidebar-toggle-visible
+bind index,pager > sidebar-next
+bind index,pager < sidebar-prev
