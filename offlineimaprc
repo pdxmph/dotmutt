@@ -1,5 +1,5 @@
 [general]
-accounts = Gmail-Puppet, Gmail-Personal
+accounts = GmailPuppet, GmailPersonal
 maxsyncaccounts = 4
 ui = ttyui
 socktimeout = 90
@@ -8,7 +8,7 @@ pythonfile=~/.mutt/offlineimap.py
 
 
 
-[Account Gmail-Puppet]
+[Account GmailPuppet]
 localrepository = Gmaillocal-Puppet
 remoterepository = Gmailserver-Puppet
 synclabels = yes
@@ -28,7 +28,7 @@ sslcacertfile =  /usr/local/etc/openssl/cert.pem
 type = GmailMaildir
 localfolders = ~/.mail/puppet.com
 
-[Account Gmail-Personal]
+[Account GmailPersonal]
 localrepository = Gmaillocal-Personal
 remoterepository = Gmailserver-Personal
 synclabels = yes
