@@ -89,7 +89,8 @@ set pager_stop             # don't go to next message automatically
 set menu_scroll            # scroll in menus
 unset markers              # no ugly plus signs
 
-alternative_order text/plain text/enriched text/html
+auto_view text/html
+alternative_order text/html text/enriched text/plain
 
 bind index gg       first-entry
 bind index G        last-entry
