@@ -19,7 +19,8 @@ macro index,browser .r "<enter-command>source ~/.muttrc<enter>"
 macro index .sn "l ^a^k~N\n" "Show unread/new only"
 macro index .sa "l ^a^kall\n" "show all"
 macro index .C "<esc>V"  "toggle threads"
-macro index .si "l (~n10-100|~N)\n" "show interesting"
+macro index .si "l ~n10-100\n" "show interesting"
+macro index .sb "l ~n<11\n" "show not so interesting"
 macro index .rs "<enter-command>source ~/.mutt/scores<enter>" # reprocess scores
 macro index .sf "l ~F\n" # show flagged
 macro index .hl "l ^a^k!~l\n" # hide lists

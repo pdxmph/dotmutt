@@ -74,9 +74,8 @@ set autoedit
 # There is only one editor 
 set editor = "/usr/local/bin/emacsclient  -t -nw"
 
+# Query the address book
 set query_command = "lbdbq %s 2>/dev/null"
-
-
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
@@ -87,7 +86,6 @@ unset markers              # no ugly plus signs
 
 auto_view text/html
 alternative_order text/html text/enriched text/plain
-
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"

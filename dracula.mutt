@@ -41,4 +41,5 @@ color quoted3		color215	default
 color quoted4		color212	default
 color signature		color212	default
 
-color index color84 default "~n >9"
+color index color231 default "~n >15"
+color index brightblack default "~n 0-3"

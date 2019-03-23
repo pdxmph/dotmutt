@@ -8,13 +8,21 @@ source ~/.mutt/dracula.mutt
 
 score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
 
+
+# Bump people in my aliases
+score "~f '(`awk -F'[<>]' '{ printf ("|%s", $2) }' ~/.mutt/aliases | cut -c2-`)' " +10
+
 # People-based scores
 score ~foterhog@gmail.com +20
-score ~fbrian.stein@puppetlabs.com +10
-score ~floriland910@gmail.com +20
 
 # bump TriMet alerts
 score "~f trimet ~s Service\\ Alert" +10
+
+#calendar stuff
+score '~s ^Invitation\:' -15
+score '~s ^Canceled\ event\:' -15
+score '~s ^Updated\ invitation\:' -15
+score '(~s ^Declined:|~s ^Accepted:)' -15
 
 # sent to my teams
 score ~Ctechpubs-dept@puppetlabs.com +10
@@ -22,8 +30,8 @@ score ~Cpnt@puppetlabs.com +10
 score ~Ceng-staff@puppetlabs.com +10
 
 # Date-based scoring penalties -- older things fall down
-score ~d>3d -1
-score ~d>7d -3
+score ~d>3d -5
+score ~d>7d -7
 score ~d>14d -10
 
 score "~O" +10 # old = +10 so I don't miss it
@@ -62,3 +70,27 @@ score ~fconfluence-updates@puppet.com +10
 score ~fconfluence-updates@puppet.com +10
 score ~fhello@getrocketbook.com -20
 score ~fquicken@email.quicken.com -20
+score ~frevbug1960@gmail.com +20
+score ~fconfluence-updates@puppet.com -20
+score ~fsupport-en@support.gandi.net -20
+score ~fpadmashree.koneti@puppet.com +10
+score ~fjonfairman@puppet.com +10
+score ~fnate.munson@puppet.com +10
+score ~fbrian@sigmacomputing.com -20
+score ~fdrive-shares-noreply@google.com +10
+score ~fcomments-noreply@docs.google.com +10
+score ~fkatie.abbott@puppet.com +10
+score ~fproducts@cprime.com -20
+score ~fchris.harry@puppet.com +10
+score ~finsider@puppet.com +10
+score ~flaura.nichols@puppet.com +10
+score ~fcandy.parker@puppet.com +10
+score ~flauren.cooper@puppet.com +10
+score ~fpamela@puppet.com +10
+score ~ffatima.albar@puppet.com +10
+score ~fmichael.hashizume@puppet.com +10
+score ~fjonathan.tripathy@puppet.com +10
+score ~fkate@puppet.com +10
+score ~fwzabaglio@gitlab.com +10
+score ~fyvonne@puppet.com +10
+score ~fcommunity@email.withings.com -20
