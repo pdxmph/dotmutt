@@ -1,5 +1,9 @@
 # -*- mode: muttrc -*-
 
+# allow the meta key
+set meta_key=yes
+
+
 # <c>hange to <p>ersonal
 macro index .cp '<change-folder>=personal/INBOX<enter><enter-command>source ~/.mutt/personal.profile<enter>'
 # <c>hange to <w>ork
@@ -36,4 +40,5 @@ macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py
 set score_threshold_delete=0
 
 macro index,pager .sp "<pipe-entry>~/.mutt/scoremail.rb +10<enter><enter-command>source ~/.mutt/scores<enter>" # score sender +10
-macro index,pager .sk "<pipe-entry>~/.mutt/scoremail.rb -20<enter><enter-command>source ~/.mutt/scores<enter>" # score sender -20
+macro index,pager .sk "<pipe-entry>~/.mutt/scoremail.rb -20<enter><enter-command>source ~/.mutt/scores<enter><delete-message>" # score sender -20
+

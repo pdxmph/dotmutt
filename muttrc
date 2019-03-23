@@ -76,11 +76,7 @@ set editor = "/usr/local/bin/emacsclient  -t -nw"
 
 set query_command = "lbdbq %s 2>/dev/null"
 
-# we'll use goobook, since it has all my contacts.
-# pip install goobook, then configure the netrc per https://pypi.python.org/pypi/goobook/1.6
-#set query_command="/usr/local/bin/goobook query '%s'"
-bind editor <Tab> complete-query
-bind editor ^T    complete
+
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
@@ -92,11 +88,6 @@ unset markers              # no ugly plus signs
 auto_view text/html
 alternative_order text/html text/enriched text/plain
 
-bind index gg       first-entry
-bind index G        last-entry
-bind index R        group-reply
-bind index <tab>    sync-mailbox
-bind index <space>  collapse-thread
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
@@ -106,11 +97,22 @@ macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 set sidebar_visible = no
 set sidebar_width   = 30
 color sidebar_new color221 color233
+
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
 # Sidebar Navigation ---------------------------------
 bind index,pager <right>  sidebar-open
 bind index,pager B sidebar-toggle-visible
 bind index,pager > sidebar-next
 bind index,pager < sidebar-prev
+
+# Generic bindings
+bind editor <Tab> complete-query
+bind editor ^T    complete
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+bind index \e<       first-entry
+bind index \e>      last-entry
