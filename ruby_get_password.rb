@@ -11,7 +11,7 @@ params = {'security' => '/usr/bin/security',
           'server' => server,
           'keychain' => keychain_path}
 
-output = `sudo -u mikehall #{params['security']} 2>&1 >/dev/null -q #{params['command']} -g -a #{params['account']} -s #{params['server']} #{params['keychain']}`
+output = `sudo -u #{user}  #{params['security']} 2>&1 >/dev/null -q #{params['command']} -g -a #{params['account']} -s #{params['server']} #{params['keychain']}`
 
 puts output.gsub(/^password:\ "(.+?)"/,"\\1")
 

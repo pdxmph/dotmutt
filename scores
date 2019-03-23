@@ -2,6 +2,10 @@
 # Mutt scoring file
 
 unscore * # start fresh
+uncolor index *
+# Read our global colours again
+source ~/.mutt/dracula.mutt
+
 score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
 
 # People-based scores
@@ -28,3 +32,18 @@ score "!~p ~d>7d" -10 # not for me directly, getting old, let it fade away
 score "!~l" +2 # to a known list, give it a bump
 
 
+score ~fstringify@stringify.com -20
+score ~fstitchfix@email.stitchfix.com -20
+score ~fjerome.comeau@gmail.com +10
+score ~fbee@busybeesdesign.com +10
+score ~fcomment-reply@wordpress.com +10
+score ~fhello@italic.com -20
+score ~fdesignsjd@sbcglobal.net +10
+score ~fbcornils@gmail.com +10
+score ~fben.a.dunfee.hall@gmail.com +10
+score ~flongworthta@gmail.com +10
+score ~fnotification@facebookmail.com -20
+score ~fhelp@airmailapp.com -20
+score ~fmarket.news@envato.com -20
+score ~fsecurity@e.netgear.com -20
+score ~fHotelLucia@contact-client.com -20
