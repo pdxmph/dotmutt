@@ -6,40 +6,33 @@ uncolor index *
 # Read our global colours again
 source ~/.mutt/dracula.mutt
 
+
+# Things to prioritize
+
+## Bump people in my aliases
+score "~f '(`awk -F'[<>]' '{ printf ("|%s", $2) }' ~/.mutt/aliases | cut -c2-`)' " +10
 score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
 
 
-# Bump people in my aliases
-score "~f '(`awk -F'[<>]' '{ printf ("|%s", $2) }' ~/.mutt/aliases | cut -c2-`)' " +10
-
-# People-based scores
-score ~foterhog@gmail.com +20
-
-# bump TriMet alerts
-score "~f trimet ~s Service\\ Alert" +10
-
 #calendar stuff
-score '~s ^Invitation\:' -15
-score '~s ^Canceled\ event\:' -15
-score '~s ^Updated\ invitation\:' -15
-score '(~s ^Declined:|~s ^Accepted:)' -15
-
-# sent to my teams
-score ~Ctechpubs-dept@puppetlabs.com +10
-score ~Cpnt@puppetlabs.com +10
-score ~Ceng-staff@puppetlabs.com +10
+score '(~s ^Canceled\ event\:|~s ^Updated\ invitation\:)' -15
+score '(~s ^Declined:|~s ^Accepted:|~s ^Invitation:)' -15
 
 # Date-based scoring penalties -- older things fall down
 score ~d>3d -5
-score ~d>7d -7
-score ~d>14d -10
+score ~d>7d -10
+score ~d>14d -20
 
+# Other bumps up
 score "~O" +10 # old = +10 so I don't miss it
 score "~F" +20 # flagged = +20 so it stays in the interesting view for a while, even if old
-score "!~p ~d>7d" -10 # not for me directly, getting old, let it fade away
-score "!~l" +2 # to a known list, give it a bump
 
 
+# Other bumps down
+score "!~p ~d>3d" -15 # not for me directly, getting old, let it fade away
+
+
+# Individual things and people
 score ~fstringify@stringify.com -20
 score ~fstitchfix@email.stitchfix.com -20
 score ~fjerome.comeau@gmail.com +10
