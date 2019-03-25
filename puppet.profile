@@ -14,7 +14,7 @@ set pipe_decode
 set thorough_search
 
 
-set folder = "~/.mail"
+set folder = "~/.mail/"
 set postponed="+puppet.com/drafts"
 set hostname="puppet.com"
 set signature= "~/.mutt/work.sig"

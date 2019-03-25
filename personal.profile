@@ -14,7 +14,7 @@ set pipe_decode
 set thorough_search
 
 
-set folder = "~/.mail"
+set folder = "~/.mail/"
 set spoolfile = "+personal/INBOX"
 set postponed="+personal/drafts"
 
@@ -31,9 +31,9 @@ set status_format= "-%r-Personal: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d
 
 unmy_hdr *
 
-my_hdr From: Michael Hall <mph@puddingbowl.org>
+my_hdr From: Mike Hall <mph@puddingbowl.org>
 my_hdr Organization: puddingbowl.org
-my_hdr Sender: Michael Hall <mph@puddingbowl.org>
+my_hdr Sender: Mike Hall <mph@puddingbowl.org>
 my_hdr Return-Path: <mph@puddingbowl.org>
 
 # clear the existing mailboxes list

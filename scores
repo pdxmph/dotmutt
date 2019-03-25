@@ -1,8 +1,10 @@
 # -*- mode: muttrc -*-
 # Mutt scoring file
 
-unscore * # start fresh
+# start fresh
+unscore * 
 uncolor index *
+
 # Read our global colours again
 source ~/.mutt/dracula.mutt
 
@@ -12,7 +14,6 @@ source ~/.mutt/dracula.mutt
 ## Bump people in my aliases
 score "~f '(`awk -F'[<>]' '{ printf ("|%s", $2) }' ~/.mutt/aliases | cut -c2-`)' " +10
 score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
-
 
 #calendar stuff
 score '(~s ^Canceled\ event\:|~s ^Updated\ invitation\:)' -15
@@ -87,3 +88,5 @@ score ~fkate@puppet.com +10
 score ~fwzabaglio@gitlab.com +10
 score ~fyvonne@puppet.com +10
 score ~fcommunity@email.withings.com -20
+score ~foterhog@gmail.com +10
+score ~fsupport-en@support.gandi.net -20
