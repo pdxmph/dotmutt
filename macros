@@ -4,9 +4,9 @@
 set meta_key=yes
 
 # <c>hange to <p>ersonal
-macro index .cp '<change-folder>=personal/INBOX<enter><enter-command>source ~/.mutt/personal.profile<enter>'
+macro  index,pager,browser .cp '<change-folder>=personal/INBOX<enter><enter-command>source ~/.mutt/personal.profile<enter>'
 # <c>hange to <w>ork
-macro index .cw '<change-folder>=puppet.com/INBOX<enter><enter-command>source ~/.mutt/puppet.profile<enter>'
+macro index,pager,browser .cw '<change-folder>=puppet.com/INBOX<enter><enter-command>source ~/.mutt/puppet.profile<enter>'
 
 # see all the urls in a message
 # which is becoming more and more god-awful
