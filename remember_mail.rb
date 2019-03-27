@@ -18,4 +18,4 @@ end
 
 `/usr/local/bin/emacsclient -c -n "org-protocol:/capture\?template=m\&url=#{url}&title=#{subject}"`
 
-osascript -e 'tell application \"Emacs\" to activate'`
+osascript -e 'tell application \"Emacs\" to activate'

@@ -19,7 +19,7 @@ source ~/.mutt/personal.profile
 # Source our macros, scores
 source ~/.mutt/macros
 source ~/.mutt/scores
-source ~/.mutt/dracula.mutt
+source ~/.mutt/base16.muttrc
 
 # aliases
 set alias_file=~/.mutt/aliases
