@@ -2,12 +2,12 @@
 # Mutt sender profile : personal/default
 
 unset folder
-set folder = "imaps://pdxmph@imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed="+[Gmail]/Drafts"
-set hostname="puddingbowl.org"
+set spoolfile = "imaps://imap.fastmail.com"
+set folder = "imaps://imap.fastmail.com/INBOX"
+set postponed="+Drafts"
+set hostname="puddingtime.org"
 set signature= "~/.mutt/personal.sig"
-set from=mph@puddingbowl.org
+set from= "Mike Hall <mike@puddingtime.org>"
 set realname = "Mike Hall"
 set smtp_url = "smtp://pdxmph@smtp.gmail.com:587/"
 
@@ -16,20 +16,20 @@ set status_format= "-%r-Personal: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d
 
 unmy_hdr *
 
-my_hdr From: Michael Hall <mph@puddingbowl.org>
-my_hdr Organization: puddingbowl.org
-my_hdr Sender: Michael Hall <mph@puddingbowl.org>
-my_hdr Return-Path: <mph@puddingbowl.org>
+my_hdr From: Michael Hall <mike@puddingtime.org>
+my_hdr Organization: puddingtime.org
+my_hdr Sender: Mike Hall <mike@puddingtime.org>
+my_hdr Return-Path: <mike@puddingtime.org>
 
 # clear the existing mailboxes list
-unmailboxes *
+#unmailboxes *
 
 # load up mailboxes appropriate to this profile
-set spoolfile=+"INBOX"
-mailboxes + "=INBOX"
-mailboxes + "=[Gmail].All Mail"
-mailboxes + "=[Gmail].Drafts"
-mailboxes + "=[Gmail].Sent Mail"
-mailboxes + "=[Gmail].Spam"
-mailboxes + "=[Gmail].Starred"
-mailboxes + "=[Gmail].Trash"
+#set spoolfile=+"INBOX"
+#mailboxes + "=INBOX"
+#mailboxes + "=[Gmail].All Mail"
+#mailboxes + "=[Gmail].Drafts"
+#mailboxes + "=[Gmail].Sent Mail"
+#mailboxes + "=[Gmail].Spam"
+#mailboxes + "=[Gmail].Starred"
+#mailboxes + "=[Gmail].Trash"

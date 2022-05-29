@@ -1,4 +1,4 @@
-# Source account hooks with authorization data 
+# Source account hooks with authorization data
 # we put some hooks with our credentials in here for each account.  They need to look like this:
 # account-hook imaps://USER@SERVER 'set imap_user=USER imap_pass=PASSWORD smtp_pass=PASSWORD'
 # See http://pthree.org/2012/01/07/encrypted-mutt-imap-smtp-passwords/ for more on encrypting this.
@@ -10,11 +10,11 @@ source ~/.mutt/auth.hooks
 # Make Google SMTP work with Yosemite
 set smtp_authenticators = 'gssapi:login'
 
-# Start off with a given profile: Uncomment this to start with a specific 
+# Start off with a given profile: Uncomment this to start with a specific
 # profile, or set an alias to pick your preferred profile at startup, e.g.
 # alias mutt = "mutt -e 'source ~/.mutt/profile.puppet'
-source ~/.mutt/puppet.profile
-#source ~/.mutt/personal.profile
+#source ~/.mutt/puppet.profile
+source ~/.mutt/personal.profile
 
 
 
@@ -44,7 +44,7 @@ set delete=yes
 set wrap=80
 
 # Who is me?
-alternates  "mph@puddingbowl.org|mike.hall@puppet.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org|michael.hall@puppetlabs.com"
+alternates  "mike@puddingtime.org|mph@puddingbowl.org|mike.hall@puppet.com|pdxmph@gmail.com|mike@bothpieces.com|m@pdbl.org|michael.hall@puppetlabs.com"
 
 # Make stuff show the way we want when viewing a message ...
 
@@ -60,7 +60,7 @@ set smart_wrap
 # Fix up the headers we see
 ignore *
 unignore list-unsubscribe date: from subject To
-hdr_order To List-Unsubscribe Date: From Subject 
+hdr_order To List-Unsubscribe Date: From Subject
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
@@ -84,8 +84,8 @@ set autoedit
 #set editor = "/usr/bin/vim -c':set spell'"
 #set editor="vim \"+set nonumber\" \"+set spell\" \"+set filetype=mail\" +/^$/"
 
-# There is only one editor 
-set editor = "/usr/local/bin/emacsclient  -t -nw"
+# There is only one editor
+set editor = "/opt/homebrew/bin/emacsclient  -t -nw"
 
 
 # Address book stuff
