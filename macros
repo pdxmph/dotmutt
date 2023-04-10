@@ -1,4 +1,4 @@
-# -*- mode: muttrc -*-
+# -*- mode: conf-unix -*-
 
 # <c>hange to <p>ersonal
 macro index .cp '<change-folder>imaps://pdxmph@imap.gmail.com<enter><enter-command>source ~/.mutt/personal.profile<enter>'
@@ -8,18 +8,28 @@ macro index .cw '<change-folder>imaps://mike.hall@puppet.com@imap.gmail.com<ente
 
 # see all the urls in a message
 # which is becoming more and more god-awful
-macro index,pager .u |/usr/local/bin/urlview
+macro index,pager .u |/opt/homebrew/bin/urlview
 
 # .r reloads our configuration
 macro index,browser .r "<enter-command>source ~/.muttrc<enter>"
 
+
+macro index .da "D .*\n" # mark all for deletion
 macro index .sn "l ^a^k~N\n" # Show unread/new only
 macro index .sa "l ^a^kall\n" # show all
 macro index .C "<esc>V" # toggle threads
-macro index .si "l (~n5-100|~N)\n" # show interesting 
+macro index .si "l (~n10-100|~N)\n" # show interesting
 macro index .rs "<enter-command>source ~/.mutt/scores<enter>" # reprocess scores
 macro index .sf "l ~F\n" # show flagged
 macro index .hl "l ^a^k!~l\n" # hide lists
-macro index,pager,browser .of "<pipe-message>~/.mutt/mutt2omnifocus.rb<enter>" # send message to omnifocus
+# macro index,pager,browser .of "<pipe-message>~/.mutt/mutt2omnifocus.rb<enter>" # send message to omnifocus
 macro index .to "T ~d>7d\n" # "tag old" -- messages older than 7 days
-macro index .ab    "<pipe-entry>/usr/local/bin/lbdb-fetchaddr\n"                # Store address details in lbdb.
+macro index .ab    "<pipe-entry>/opt/homebrew/bin/lbdb-fetchaddr\n"                # Store address details in lbdb.
+macro index A ":set confirmappend=no delete=yes auto_tag=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+# Score messages
+macro index,browser .sp "<pipe-entry>~/.mutt/mailscore.rb +5\n<enter-command>source ~/.mutt/scored<enter>" # score sender +5
+macro index,browser .sP "<pipe-entry>~/.mutt/mailscore.rb +20\n<enter-command>source ~/.mutt/scored<enter>" # score sender +20
+macro index,browser .sm "<pipe-entry>~/.mutt/mailscore.rb -5\n<enter-command>source ~/.mutt/scored<enter>" # score sender -5
+macro index,browser .sM "<pipe-entry>~/.mutt/mailscore.rb -20\n<enter-command>source ~/.mutt/scored<enter>" # score sender -20
+
+macro index y ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"

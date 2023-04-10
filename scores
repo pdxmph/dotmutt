@@ -1,4 +1,4 @@
-# -*- mode: muttrc -*-
+# -*- mode: conf-unix -*-
 # Mutt scoring file
 
 unscore * # start fresh
@@ -6,15 +6,12 @@ score ~p +5 # Mail addressed to me or one of my alternates gets 5 points
 
 # People-based scores
 score ~foterhog@gmail.com +20
-score ~fbrian.stein@puppetlabs.com +10
-
-# bump TriMet alerts
-score "~f trimet ~s Service\\ Alert" +10
+score ~fvasu.kohli@iterable.com +20
 
 # sent to my teams
-score ~Ctechpubs-dept@puppetlabs.com +10
-score ~Cpnt@puppetlabs.com +10
-score ~Ceng-staff@puppetlabs.com +10
+# score ~Ctechpubs-dept@puppetlabs.com +10
+# score ~Cpnt@puppetlabs.com +10
+# score ~Ceng-staff@puppetlabs.com +10
 
 # Date-based scoring penalties -- older things fall down
 score ~d>3d -1
@@ -28,5 +25,5 @@ score "!~l" +2 # to a known list, give it a bump
 
 
 # Short Shelf-Lives
-score "~d>1d ~f trimet ~sService\\ Alert" -50
-score "~d>1d ~f Unroll.me ~sDaily\\ Rollup" -50
+# score "~d>1d ~f trimet ~sService\\ Alert" -50
+# score "~d>1d ~f Unroll.me ~sDaily\\ Rollup" -50

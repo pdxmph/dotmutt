@@ -1,7 +1,7 @@
 # colors
-color normal	brightwhite black
-color attachment brightyellow black
-color hdrdefault cyan black
+color normal	white default
+color attachment brightyellow default
+color hdrdefault green default
 color indicator white blue
 color markers	brightred black
 color quoted	green black
@@ -10,15 +10,16 @@ color status  white magenta
 color tilde	blue black
 color tree	red black
 
-color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color header	green default ^From:
+color header    green default ^Subject:
+color body	brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
 
 color index white default "~n 6-9"
 color index white red "~f trimet ~s Service\\ Alert"
 color index brightblack default "~f trimet ~s Service\\ Alert ~d>1d"
 color index brightblack default "~f Unroll.me ~s Daily\\ Rollup ~d>1d"
-color index brightblack default "~n 0-2 !~p"
-color index brightblack default "~n <1"
-color index red default "~n >9"
-
-color header brightblack default "(^List-Unsubscribe:|^To:|^Date:)"
-
+color index cyan default "~n 0-2 !~p"
+color index magenta default "~n <5"
+color index brightyellow default "~n >15"
+color index brightred default "~n >19"
+#color header brightblack default "(^List-Unsubscribe:|^To:|^Date:)"
