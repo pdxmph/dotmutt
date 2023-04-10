@@ -3,3 +3,5 @@ certificates
 auth.hooks
 passwords
 passwords.gpg
+/sample.msg
+/test_msg
